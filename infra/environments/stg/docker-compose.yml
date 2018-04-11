@@ -1,0 +1,14 @@
+version: '3.2'
+
+services:
+  buildpack-infra:
+    image: ${GOOGLE_PROJECT_ID}-infra-stg
+    build: ../../
+    environment:
+      - ENV=stg
+      - PROJECT=${GOOGLE_PROJECT_ID}
+      - REGION=${GOOGLE_COMPUTE_REGION}
+      - BOTO_CONFIG=/infra/.boto
+    volumes:
+      - ~/.config:/root/.config
+      - ~/.kube:/root/.kube

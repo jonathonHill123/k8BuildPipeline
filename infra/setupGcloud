@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+SERVICE_ACCOUNT=${GCP_SERVICE_ACCOUNT_KEY}
+PROJECT=${GOOGLE_PROJECT_ID}
+REGION=${GOOGLE_COMPUTE_REGION}
+
+echo ${SERVICE_ACCOUNT} > /tmp/gcp-key.json
+gcloud auth activate-service-account --key-file /tmp/gcp-key.json
+gcloud --quiet config set project ${PROJECT}
+gcloud --quiet config set compute/region ${REGION}
