@@ -8,8 +8,13 @@ This repo contains infrastructure as code (IaC) for k8BuildPipeline cloud resour
 
 Setup:
 
-1. Create a google cloud project and service account
-2. Enable Google Cloud DNS API for given service account
-3. Enable Google Kubernetes Engine API for given service account
-4. Manually create managedZone PROJECT_NAME
-5. Update stg & prod env variables
+  - Create a google cloud project and service account
+  - Enable Google Cloud DNS API for given service account
+  - Enable Google Kubernetes Engine API for given service account
+  - Manually create managedZone PROJECT_NAME
+  - Update stg & prod env variables
+
+FIXME:
+
+  - .boto file has hard coded service account name
+  - Prod & stg envs are in the same gcp project
