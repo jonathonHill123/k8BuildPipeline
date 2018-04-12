@@ -17,7 +17,7 @@ spec:
       containers:
         - name: example-service
           imagePullPolicy: Always
-          image: gcr.io/k8buildpipeline/example-service:v2
+          image: IMAGE_NAME_PLACEHOLDER:IMAGE_TAG_PLACEHOLDER
           livenessProbe:
             httpGet:
               path: /

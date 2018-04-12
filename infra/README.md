@@ -13,6 +13,8 @@ Setup:
   - Enable Google Kubernetes Engine API for given service account
   - Manually create managedZone PROJECT_NAME
   - Update stg & prod env variables
+  - ./setupGcloud
+  - cd environments/stg/ && make provision
 
 FIXME:
 
