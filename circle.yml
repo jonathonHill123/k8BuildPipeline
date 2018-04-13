@@ -6,6 +6,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
+      - run: make set_staging_env_vars
       - run: make build
       - run: make setup_gcloud
       - run: make push_image
@@ -15,6 +16,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
+      - run: make set_staging_env_vars
       - run: make setup_gcloud
       - run: make deploy
 

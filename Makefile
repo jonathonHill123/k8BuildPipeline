@@ -12,3 +12,5 @@ push_image:
 deploy:
 	./deploy
 
+set_staging_env_vars:
+	. ./setStagingEnvVars
