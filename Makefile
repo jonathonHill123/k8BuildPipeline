@@ -7,7 +7,7 @@ build:
 	docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .
 
 push_image:
-	./pushImage
+	IMAGE_TAG=${IMAGE_TAG} ./pushImage
 
 deploy:
 	./deploy
