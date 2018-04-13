@@ -3,8 +3,7 @@ set -e
 
 echo "IMAGE_NAME_PROD ${IMAGE_NAME_PROD}"
 
-cat compose/prod/deployment.yml | sed "s~IMAGE_NAME_PLACEHOLDER~${IMAGE_NAME_PROD}~g" > tmp.txt && mv tmp.txt compose/prod/deployment.yml
-cat compose/prod/deployment.yml | sed "s~IMAGE_TAG_PLACEHOLDER~${IMAGE_TAG}~g" > tmp.txt && mv tmp.txt compose/prod/deployment.yml
+cat compose/prod/deployment.yml | sed "s~IMAGE_NAME_PLACEHOLDER~${IMAGE_NAME_PROD}:${IMAGE_TAG}~g" > tmp.txt && mv tmp.txt compose/prod/deployment.yml
 
 kubectl apply -f compose/prod/deployment.yml
 kubectl apply -f compose/prod/service.yml
