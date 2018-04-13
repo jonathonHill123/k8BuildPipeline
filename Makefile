@@ -1,7 +1,10 @@
 IMAGE_TAG=${CIRCLE_SHA1}
 
-setup_gcloud:
-	./setupGcloud
+setup_gcloud_stg:
+	./setupGcloudStg
+
+setup_gcloud_prod:
+	./setupGcloudProd
 
 build:
 	docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .

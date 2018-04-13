@@ -2,12 +2,12 @@ version: '3.2'
 
 services:
   buildpack-infra:
-    image: ${GOOGLE_PROJECT_ID}-infra-${ENV}
+    image: ${GOOGLE_PROJECT_ID}-infra-prod
     build: ../../
     environment:
-      - ENV
-      - PROJECT
-      - REGION
+      - ENV=prod
+      - PROJECT=${GOOGLE_PROJECT_ID}
+      - REGION=${GOOGLE_COMPUTE_REGION}
       - BOTO_CONFIG=/infra/.boto
     volumes:
       - ~/.config:/root/.config
