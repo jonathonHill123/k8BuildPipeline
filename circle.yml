@@ -16,7 +16,7 @@ jobs:
       - checkout
       - setup_remote_docker
       - run: make setup_gcloud
-      - run: make deploy_to_gke
+      - run: make deploy
 
 workflows:
   version: 2
