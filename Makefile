@@ -9,7 +9,7 @@ build:
 test:
 	echo "There are no tests! gl.."
 
-push:
+push_image:
 	gcloud docker -- push $(eval echo ${IMAGE_NAME}:${IMAGE_TAG})
 
 deploy:
