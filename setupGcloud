@@ -1,10 +1,10 @@
 #!/bin/bash
 set -e
 
-echo ${GCP_SERVICE_ACCOUNT_KEY} > /tmp/gcp-key.json
+echo ${GCP_SERVICE_ACCOUNT_KEY_STG} > /tmp/gcp-key.json
 gcloud auth activate-service-account --key-file /tmp/gcp-key.json
-gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
-gcloud --quiet config set compute/region ${GOOGLE_COMPUTE_REGION}
-gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
-gcloud --quiet config set container/cluster ${GOOGLE_CLUSTER_NAME}
-gcloud --quiet container clusters get-credentials ${GOOGLE_CLUSTER_NAME}
+gcloud --quiet config set project ${GOOGLE_PROJECT_ID_STG}
+gcloud --quiet config set compute/region ${GOOGLE_COMPUTE_REGION_STG}
+gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE_STG}
+gcloud --quiet config set container/cluster ${GOOGLE_CLUSTER_NAME_STG}
+gcloud --quiet container clusters get-credentials ${GOOGLE_CLUSTER_NAME_STG}
