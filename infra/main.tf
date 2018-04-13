@@ -8,10 +8,11 @@ terraform {
 variable "env" {}
 variable "dns_prefix" {}
 variable "cluster_name" {}
+variable "project" {}
 
 provider "google" {
   version = "~> 1.0"
-  project = "k8buildpipeline"
+  project = "${var.project}"
 }
 
 module "dns" {

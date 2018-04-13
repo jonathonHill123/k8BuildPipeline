@@ -8,7 +8,7 @@ services:
       - ENV=prod
       - PROJECT=${GOOGLE_PROJECT_ID}
       - REGION=${GOOGLE_COMPUTE_REGION}
-      - BOTO_CONFIG=/infra/.boto
+      - BOTO_CONFIG=/infra/environments/prod/.boto
     volumes:
       - ~/.config:/root/.config
       - ~/.kube:/root/.kube
