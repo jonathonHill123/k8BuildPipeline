@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "IMAGE_NAME_STG ${IMAGE_NAME_STG}"
+echo "IMAGE_NAME_PLACEHOLDER ${IMAGE_NAME_STG}:${IMAGE_TAG}"
 
 cat compose/stg/deployment.yml | sed "s~IMAGE_NAME_PLACEHOLDER~${IMAGE_NAME_STG}:${IMAGE_TAG}~g" > tmp.txt && mv tmp.txt compose/stg/deployment.yml
 
