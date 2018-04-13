@@ -7,10 +7,14 @@ setup_gcloud_prod:
 	./setupGcloudProd
 
 build:
-	docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .
+	docker build -t ${IMAGE_NAME_STG}:${IMAGE_TAG} .
 
-push_image:
-	IMAGE_TAG=${IMAGE_TAG} ./pushImage
+push_stg_image:
+	IMAGE_TAG=${IMAGE_TAG} ./pushStgImage
+
+push_prod_image:
+	IMAGE_TAG=${IMAGE_TAG} ./renameStgImageToProdImage && \
+	IMAGE_TAG=${IMAGE_TAG} ./pushProdImage
 
 deploy_stg:
 	./deploy-stg

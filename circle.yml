@@ -8,9 +8,9 @@ jobs:
       - setup_remote_docker
       - run: make build
       - run: make setup_gcloud_stg
-      - run: make push_image
+      - run: make push_stg_image
       - run: make setup_gcloud_prod
-      - run: make push_image
+      - run: make push_prod_image
   deploy_to_staging:
     docker:
       - image: jcg582/circleci-docker-gcloud-ubuntu

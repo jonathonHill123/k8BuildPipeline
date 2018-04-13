@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+
+gcloud docker -- push $(eval echo ${IMAGE_NAME_STG}:${IMAGE_TAG})

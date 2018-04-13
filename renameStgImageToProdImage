@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+
+docker tag ${IMAGE_NAME_STG}:${IMAGE_TAG} ${IMAGE_NAME_PROD}:${IMAGE_TAG}
