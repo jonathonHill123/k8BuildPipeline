@@ -17,7 +17,7 @@ spec:
       containers:
         - name: example-service
           imagePullPolicy: Always
-          image: IMAGE_NAME_PLACEHOLDER:IMAGE_TAG_PLACEHOLDER
+          image: IMAGE_NAME_PLACEHOLDER
           livenessProbe:
             httpGet:
               path: /
