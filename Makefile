@@ -9,7 +9,7 @@ setup_gcloud:
 	gcloud --quiet container clusters get-credentials ${GOOGLE_CLUSTER_NAME}
 
 build:
-	docker build -t ${IMAGE_NAME}:${IMAGE_TAG}
+	docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .
 
 test:
 	echo "There are no tests! gl.."
