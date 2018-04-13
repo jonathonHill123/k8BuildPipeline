@@ -17,7 +17,7 @@ push_prod_image:
 	IMAGE_TAG=${IMAGE_TAG} ./pushProdImage
 
 deploy_stg:
-	./deploy-stg
+	IMAGE_TAG=${IMAGE_TAG} ./deploy-stg
 
 deploy_prod:
-	./deploy-prod
+	IMAGE_TAG=${IMAGE_TAG} ./deploy-prod
