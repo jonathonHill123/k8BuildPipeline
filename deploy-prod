@@ -1,0 +1,9 @@
+#!/bin/bash
+set -e
+
+cat compose/prod/deployment.yml | sed "s~IMAGE_NAME_PLACEHOLDER~${IMAGE_NAME}~g" > tmp.txt && mv tmp.txt compose/prod/deployment.yml
+cat compose/prod/deployment.yml | sed "s~IMAGE_TAG_PLACEHOLDER~${IMAGE_TAG}~g" > tmp.txt && mv tmp.txt compose/prod/deployment.yml
+
+kubectl apply -f compose/prod/deployment.yml
+kubectl apply -f compose/prod/service.yml
+kubectl apply -f compose/prod/ingress.yml

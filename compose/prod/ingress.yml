@@ -1,0 +1,10 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-service
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: k8buildpipeline-prod
+spec:
+  backend:
+    serviceName: example-service
+    servicePort: 3000

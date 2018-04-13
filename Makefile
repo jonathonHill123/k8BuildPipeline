@@ -12,5 +12,8 @@ build:
 push_image:
 	IMAGE_TAG=${IMAGE_TAG} ./pushImage
 
-deploy:
-	./deploy
+deploy_stg:
+	./deploy-stg
+
+deploy_prod:
+	./deploy-prod

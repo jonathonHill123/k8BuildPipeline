@@ -18,7 +18,15 @@ jobs:
       - checkout
       - setup_remote_docker
       - run: make setup_gcloud_stg
-      - run: make deploy
+      - run: make deploy_stg
+  deploy_to_prod:
+    docker:
+      - image: jcg582/circleci-docker-gcloud-ubuntu
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: make setup_gcloud_prod
+      - run: make deploy_prod
 
 workflows:
   version: 2
@@ -32,3 +40,10 @@ workflows:
       - deploy_to_staging:
           requires:
             - trigger_deploy_to_staging
+      - trigger_deploy_to_prod:
+          type: approval
+          requires:
+            - deploy_to_staging
+      - deploy_to_prod:
+          requires:
+            - trigger_deploy_to_prod
