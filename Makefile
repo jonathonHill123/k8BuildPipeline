@@ -6,9 +6,6 @@ setup_gcloud:
 build:
 	docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .
 
-test:
-	echo "There are no tests! gl.."
-
 push_image:
 	./pushImage
 
