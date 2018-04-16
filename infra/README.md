@@ -16,7 +16,3 @@ Setup:
   - ./setupGcloud
   - cd environments/stg/ && make provision
 
-FIXME:
-
-  - .boto file has hard coded service account name
-  - Prod & stg envs are in the same gcp project
